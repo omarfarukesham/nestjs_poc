@@ -14,7 +14,7 @@ export class AuthService {
 
   async validateUser(email: string, password: string): Promise<any> {
     const user = await this.userModel.findOne({ email });
-    console.log('User found:', user);
+
     if (!user) throw new UnauthorizedException('Invalid credentials');
 
     const isMatch: boolean = await bcrypt.compare(password, user.password);
