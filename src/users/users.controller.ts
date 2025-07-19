@@ -39,8 +39,9 @@ export class UserController {
     @Body('name') name: string,
     @Body('email') email: string,
     @Body('password') password: string,
+    @Body('role') role: string,
   ) {
-    return this.userService.createUser(name, email, password);
+    return this.userService.createUser(name, email, password, role);
   }
 
   @Patch(':id')

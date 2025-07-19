@@ -12,8 +12,8 @@ export class Blog {
   @Prop({ required: true })
   details!: string;
 
-  @Prop({ required: true })
-  author!: string;
+  // @Prop({ required: true })
+  // author!: string;
 
   @Prop({ default: false })
   isPublished!: boolean;

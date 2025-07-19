@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // blog/blog.controller.ts
 import {
   Controller,
@@ -31,8 +30,6 @@ export class BlogController {
   }
 
   @Post()
-  @UseGuards(AuthGuard('jwt'), RolesGuard)
-  @Roles('admin', 'super_admin')
   async create(
     @Request() req,
     @Body() body: { blogTitle: string; details: string },
@@ -40,7 +37,7 @@ export class BlogController {
     return this.blogService.create(
       body.blogTitle,
       body.details,
-      req.user.username,
+      //   req.user.username,
     );
   }
 

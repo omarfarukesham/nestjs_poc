@@ -21,9 +21,9 @@ export class BlogService {
   async create(
     blogTitle: string,
     details: string,
-    author: string,
+    // author: string,
   ): Promise<Blog> {
-    const createdBlog = new this.blogModel({ blogTitle, details, author });
+    const createdBlog = new this.blogModel({ blogTitle, details });
     return createdBlog.save();
   }
 

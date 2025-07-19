@@ -31,9 +31,9 @@ export class UserService {
   //   const createdUser = new this.userModel({ name, email, password });
   //   return createdUser.save();
   // }
-  async createUser(name: string, email: string, password: string): Promise<User> {
+  async createUser(name: string, email: string, password: string, role: string): Promise<User> {
     const hashedPassword = await bcrypt.hash(password, 8); 
-    const createdUser = new this.userModel({ name, email, password: hashedPassword });
+    const createdUser = new this.userModel({ name, email, role, password: hashedPassword });
     return createdUser.save();
   }
   async updateUser(id: string, updateData: UpdateUserDto): Promise<User> {
